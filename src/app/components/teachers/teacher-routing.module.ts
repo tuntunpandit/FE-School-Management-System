@@ -1,16 +1,19 @@
-// src/app/teacher/teacher-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
-import { TeacherGuard } from '../guards/teacher.guard';
+// import { TeacherGuard } from '../guards/teacher.guard';
 
 const routes: Routes = [
   {
-    path: 'teacher-dashboard',
+    path: 'dashboard',
     component: TeacherDashboardComponent,
-    canActivate: [TeacherGuard],
+    // canActivate: [TeacherGuard],
   },
-  // Other teacher routes
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

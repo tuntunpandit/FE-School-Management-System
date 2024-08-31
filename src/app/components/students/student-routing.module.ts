@@ -2,15 +2,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
-import { StudentGuard } from '../guards/student.guard';
 
 const routes: Routes = [
   {
-    path: 'student-dashboard',
+    path: 'dashboard',
     component: StudentDashboardComponent,
-    canActivate: [StudentGuard],
+    // canActivate: [StudentGuard],
   },
-  // Other student routes
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
